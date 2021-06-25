@@ -7,8 +7,8 @@ use GuzzleHttp\Client;
 
 class Base extends BaseServer
 {
-    private string $appKey;
-    private string $appSecret;
+    protected string $appKey;
+    protected string $appSecret;
 
     protected string $method = 'GET';
     protected string $domain = '';
@@ -24,6 +24,14 @@ class Base extends BaseServer
 
     protected array $getParams = [];
     protected array $postParams = [];
+
+    public function __construct($config)
+    {
+        parent::__construct($config);
+        if (!$this->getAppKey() || !$this->getAppSecret()) {
+            throw new \Exception('appKey and appSecret not null', '');
+        }
+    }
 
     public function request(): bool
     {
