@@ -1,0 +1,28 @@
+{
+    "name": "hufei/db-pay",
+    "description": "内部使用通用包",
+    "type": "library",
+    "authors": [
+        {
+            "name": "胡飞",
+            "email": "13847498501@163.com"
+        }
+    ],
+    "require-dev": {
+
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "ext-curl": "*",
+        "ext-redis": "*",
+        "guzzlehttp/guzzle": "6.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "DbPay\\": "src/"
+        }
+    }
+}
